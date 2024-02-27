@@ -28,7 +28,21 @@ For One vs Rest : [Classification_report_of_all_OvR_classes](https://github.com/
 
 For 5 class classification : [Classification_report_of_5_class_classification](https://github.com/Abeey04/SRIP-24/blob/5066b114f224951d31403c142cca726d3fd87986/5_class_classification/Classification_report_of_5_class_classification.csv)
 
+### D. Convolutional Layer Visualization:
+  The activation maps, called feature maps, capture the result of applying the filters to input, such as the input image or another feature map.
 
+The idea of visualizing a feature map for a specific input image would be to understand what features of the input are detected or preserved in the feature maps. The expectation would be that the feature maps close to the input detect small or fine-grained detail, whereas feature maps close to the output of the model capture more general features.
+
+The Custom CNN model's Convolution layers are :
+![Conv1](https://github.com/Abeey04/SRIP-24/blob/82e2b0a9d54d16a4261cf267dace131146b0d518/Visualize_Convolution_layer/conv1.png)
+
+![Conv2](https://github.com/Abeey04/SRIP-24/blob/82e2b0a9d54d16a4261cf267dace131146b0d518/Visualize_Convolution_layer/conv2.png)
+
+![Conv3](https://github.com/Abeey04/SRIP-24/blob/82e2b0a9d54d16a4261cf267dace131146b0d518/Visualize_Convolution_layer/conv3.png)
+
+We can see that the feature maps closer to the input of the model capture a lot of fine detail in the image and that as we progress deeper into the model, the feature maps show less and less detail.
+
+This pattern was to be expected, as the model abstracts the features from the image into more general concepts that can be used to make a classification. Although it is not clear from the final image, we generally lose the ability to interpret these deeper feature maps.
 
   [^1]: [Rifkin, Ryan & Klautau, Aldebaro. (2004). In Defense of One-Vs-All Classification. Journal of Machine Learning Research. 5. 101-141.](https://www.researchgate.net/publication/220320940_In_Defense_of_One-Vs-All_Classification)
   [^2]: [Johnson, J.M., Khoshgoftaar, T.M. Survey on deep learning with class imbalance. J Big Data 6, 27 (2019).](https://doi.org/10.1186/s40537-019-0192-5)
