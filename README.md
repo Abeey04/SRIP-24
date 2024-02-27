@@ -32,6 +32,7 @@ For 5 class classification : [Classification_report_of_5_class_classification](h
   The activation maps, called feature maps, capture the result of applying the filters to input, such as the input image or another feature map.
 
 The idea of visualizing a feature map for a specific input image would be to understand what features of the input are detected or preserved in the feature maps. The expectation would be that the feature maps close to the input detect small or fine-grained detail, whereas feature maps close to the output of the model capture more general features.
+All the outputs of Convolutional layers are plotted with the help of [Visualize_Convolution_Layer](Visualize_Convolution_layer/Visualize_Convolution_Layer.ipynb)
 
 The Custom CNN model's Convolution layers are :
 ![Conv1](https://github.com/Abeey04/SRIP-24/blob/82e2b0a9d54d16a4261cf267dace131146b0d518/Visualize_Convolution_layer/conv1.png)
