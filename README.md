@@ -13,16 +13,26 @@ Hence, to solve the problem of class imbalance, I augmented the samples of Prima
 Furthermore, I decided to have different ecological niche like Terrestrial, Aquatic, Aerial, Arboreal and Burrowing as the Classification Schema for condensing and organizing 90 different classes into 5 classes[^3]
 
 ### B. Model Development:
-  Here, the input shape is set to be (128,128) and 3 color channels. Further, the samples are loaded with a Batch size of 32, the Learning rate is set to 1e-3. Also, the model is compiled with the 'adam' optimizer and categorical_crossentropy as the classification loss.
+  Here, the input shape is set to be (128,128) and 3 color channels. Further, the samples are loaded with a Batch size of 32, the Learning rate is set to 1e-3. Also, when training for OvR the model is compiled with the 'adam' optimizer and _binary_crossentropy_ [^4] as the classification loss. Where as, when training for 5 class classification the model is compiled with  _categorical_crossentropy_ [^5] as the classification loss
 
 The model consists of 3 Convolution layers followed by 3 Fully Connected dense layers as classifier. The Convolution layers have activation function as 'Relu' (Rectified Linear Unit). Morevoer the last dense layer possesses 'softmax' as activation function. Each Convolution layer consists of a Maxpooling2D and BatchNormalization followed by a Dropout layer(p = 0.25)
 
 ![Architecture of Custom CNN model](https://github.com/Abeey04/SRIP-24/blob/main/Visualize_Convolution_layer/Architecture%20of%20Custom%20CNN%20model.png?raw=true)
 
+### C. Training and Evaluation:
+  The K Fold Cross-validation is done with the help of sklearn library where we evaluate the model 3 times (different model instances) with 3 different splits of shuffled Training data. 
+
+During each fold the classification metrics of the model is calculated and recorded and saved into the .csv file. Moreover, Confusion Matrix to visualize the perfomance of the model is computed and saved for each fold.
+
+For One vs Rest : [Classification_report_of_all_OvR_classes](https://github.com/Abeey04/SRIP-24/blob/5066b114f224951d31403c142cca726d3fd87986/One%20vs%20Rest%20Classification/Classification_report_of_all_OvR_classes.csv)
+
+For 5 class classification : [Classification_report_of_5_class_classification](https://github.com/Abeey04/SRIP-24/blob/5066b114f224951d31403c142cca726d3fd87986/5_class_classification/Classification_report_of_5_class_classification.csv)
 
 
 
   [^1]: [Rifkin, Ryan & Klautau, Aldebaro. (2004). In Defense of One-Vs-All Classification. Journal of Machine Learning Research. 5. 101-141.](https://www.researchgate.net/publication/220320940_In_Defense_of_One-Vs-All_Classification)
   [^2]: [Johnson, J.M., Khoshgoftaar, T.M. Survey on deep learning with class imbalance. J Big Data 6, 27 (2019).](https://doi.org/10.1186/s40537-019-0192-5)
   [^3]: [A Comprehensive Guide to Classifying and Understanding Animal Anatomy, Habitats, Communication, Behavior and Survival Strategies](https://www.scribd.com/document/246340404/Classification-of-Animals-Based-on-Their-Habitat) 
+  [^4]: [Ruby, Usha & Yendapalli, Vamsidhar. (2020). Binary cross entropy with deep learning technique for Image classification. International Journal of Advanced Trends in Computer Science and Engineering. 9. 10.30534/ijatcse/2020/175942020.](https://www.researchgate.net/publication/344854379_Binary_cross_entropy_with_deep_learning_technique_for_Image_classification)
+  [^5]: [Generalized Cross Entropy Loss for Training Deep Neural Networks with Noisy Labels](https://doi.org/10.48550/arXiv.1805.07836)
 
