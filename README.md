@@ -3,7 +3,7 @@
 ### A. Dataset Preparation: 
   The dataset contained the total number of 90 classes where each class possessed image samples of the animal which the class is comprised.
   Moreover, the first task was to organize the Dataset of 90 classes into a One vs Rest dataset for the purpose of Binary Classification.
-
+  
   Here, One vs Rest is a type of multiclass classification schemes built on top of real-valued binary classifiers is to train N different binary classifiers, each one trained to distinguish the examples in a single class from the examples in all remaining classes [^1]
   
 
