@@ -16,7 +16,8 @@ Furthermore, I decided to have different ecological niche like Terrestrial, Aqua
   Here, the input shape is set to be (128,128) and 3 color channels. Further, the samples are loaded with a Batch size of 32, the Learning rate is set to 1e-3. Also, the model is compiled with the 'adam' optimizer and categorical_crossentropy as the classification loss.
 
 The model consists of 3 Convolution layers followed by 3 Fully Connected dense layers as classifier. The Convolution layers have activation function as 'Relu' (Rectified Linear Unit). Morevoer the last dense layer possesses 'softmax' as activation function. Each Convolution layer consists of a Maxpooling2D and BatchNormalization followed by a Dropout layer(p = 0.25)
-![Architecture of Custom CNN model](Visualize_Convolution_layer/Architecture of Custom CNN model.png)
+
+![Architecture of Custom CNN model](https://github.com/Abeey04/SRIP-24/blob/main/Visualize_Convolution_layer/Architecture%20of%20Custom%20CNN%20model.png?raw=true)
 
 
 
